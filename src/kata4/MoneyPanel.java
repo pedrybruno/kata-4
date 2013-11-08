@@ -15,5 +15,4 @@ public class MoneyPanel extends JPanel {
         return textField;
     }
     
-    
 }
