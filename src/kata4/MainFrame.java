@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.HeadlessException;
+import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -22,6 +23,7 @@ public class MainFrame extends JFrame{
     }
 
     private void createComponents() {
+        this.add(createMoneyDialog());
         this.add(crateToolbar(), BorderLayout.SOUTH);
     }
 
@@ -63,5 +65,12 @@ public class MainFrame extends JFrame{
     
     private void calculate() {
         System.out.println("Calculating...");
+    }
+
+    private JPanel createMoneyDialog() {
+        JPanel panel = new JPanel();
+        panel.add(new MoneyPanel());
+        panel.add(new CurrencyPanel());
+        return panel;
     }
 }
